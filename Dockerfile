@@ -15,12 +15,12 @@ RUN --mount=type=cache,mode=0755,target=/go/pkg/mod go mod download
 
 COPY . .
 
-RUN --mount=type=cache,target=/root/.cache/go-build --mount=type=cache,mode=0755,target=/go/pkg/mod go mod tidy && go build -o authservice *.go
+RUN --mount=type=cache,target=/root/.cache/go-build --mount=type=cache,mode=0755,target=/go/pkg/mod go mod tidy && go build -o mongo-app *.go
 
 # Deployment container
 FROM scratch
 
-COPY --from=builder /go/src/authservice /authservice
+COPY --from=builder /go/src/mongo-app /mongo-app
 
-ENTRYPOINT ["/authservice"]
+ENTRYPOINT ["/mongo-app"]
 CMD []
