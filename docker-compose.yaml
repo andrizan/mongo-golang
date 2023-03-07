@@ -11,6 +11,18 @@ services:
       - mongoNet
     volumes:
       - store_db:/data/db
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 9000:9000
+    networks:
+      - mongoNet
+    links:
+      - mongodb
+    depends_on:
+      - mongodb
 
 networks:
   mongoNet:
