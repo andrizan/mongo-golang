@@ -31,7 +31,7 @@ func main() {
 
 	log.Println("Connected to Mongo Database!")
 
-	coll := client.Database("ebelanja").Collection("users").FindOne(ctx, bson.D{})
+	coll := client.Database("DATABASE").Collection("users").FindOne(ctx, bson.D{})
 
 	var secret bson.M
 	coll.Decode(&secret)
