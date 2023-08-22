@@ -1,6 +1,6 @@
 # mongo-golang
 
-## require
+## required
 - Golang binnary
 - Mongodb
 - Docker (optional)
