@@ -3,8 +3,8 @@ module mongo
 go 1.23.0
 
 require (
+	go.mongodb.org/mongo-driver v1.17.4
 	github.com/gofiber/fiber/v2 v2.52.9
-	go.mongodb.org/mongo-driver v1.17.3
 )
 
 require (
